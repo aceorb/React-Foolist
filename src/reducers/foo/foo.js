@@ -94,7 +94,9 @@ export default function reducer(state = initialState, action) {
       const completedAt = moment().utc().format();
 
       return {
+        ...state,
         byId: {
+          ...state.byId,
           [id]: {
             ...foo,
             completedAt: foo.completedAt ? null : completedAt,
